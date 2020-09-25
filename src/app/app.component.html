@@ -1,0 +1,64 @@
+<div  [ngClass]="{'black' : p1===true,'blue':p1===false}">
+{{title}}
+</div>
+
+  <div [ngStyle]="{'background-color':person === 'Jacfhfhfh' ? 'green' : 'red' }">
+    <p>Thete</p>
+  </div>
+  {{title}}
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<p *ngIf="!p1">Hey p1 here!</p>
+<p *ngIf="p1">Hey p2 here!</p>
+
+<input type="text" [(ngModel)]="title" />
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>FirstName</th>
+    <th>LastName</th>
+    <th>UserName</th>
+    <th>Age</th>
+    <th>Salary</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let x of users ">
+    <td>{{x.firstName | uppercase}}</td>
+    <!-- <td>{{x.firstName | slice : 0 : 2}}</td> -->
+    <td>{{x.lastName | lowercase}}</td>
+    <td>{{x.username}}</td>
+    <td>{{x.age | percent}}</td>
+    <td>{{x.salary | currency : 'CAD'}}</td>
+
+    
+  </tr>
+  </tbody>
+</table>
+
+<div [ngSwitch] ="mode">
+  <h1 *ngSwitchCase="1">One</h1>
+  <h1 *ngSwitchCase="2">Two</h1>
+  <h1 *ngSwitchDefault>Default</h1>
+
+</div>
+
+{{todayNumber | date:'short'}} <br/>
+{{todayDate | date : 'longDate'}}<br/>
+{{todayString | date : 'fullDate'}}<br/>
+{{todayISOString | date: 'shortTime'}}<br/>
+
+<app-first></app-first>
+
+<app-Second></app-Second>
+
+
+<services></services>
+
