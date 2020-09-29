@@ -8,7 +8,9 @@ import { FirstComponent } from './first/first.component';
 import { SecondComponent} from './Second/Second.component';
 import { BracketsPipe} from './CustomPipe/Brackets.Pipe';
 import {ServiceComponent } from './ServiceComp/Service.component';
-import {LogService} from './Services/log.service'
+import {LogService} from './Services/log.service';
+import {childComponent} from './childComponent/childComponent';
+import { ParentComponent } from './ParentComponent/Parent.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import {LogService} from './Services/log.service'
     FirstComponent,
     SecondComponent,
     BracketsPipe,
-    ServiceComponent
+    ServiceComponent,
+    childComponent,
+    ParentComponent
   ],
   imports: [
     BrowserModule,
