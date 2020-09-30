@@ -13,8 +13,9 @@ export class ParentComponent implements OnInit{
 
     }
     ngOnInit(){
-
+console.log("Heyyy!!!")
     }
+    
 
     receiving(data){
 this.childvar=  data

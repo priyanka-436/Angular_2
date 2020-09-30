@@ -1,1 +1,14 @@
 <p>first works!</p>
+<form [formGroup]="testform" (ngSubmit)="FormFunction()">
+    <div class="form-group">
+        <label for="username">User Name:</label>
+        <input type="text" formControlName="uname" placeholder="username" name="username" class="form-control" id="username">
+      </div>
+  
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input formControlName="fname"  placeholder="First Name" name="firstName" class="form-control" id="firstName">
+      </div>
+
+    <button>Form</button>
+</form>
