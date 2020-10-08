@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {ReactiveFormsModule, FormsModule} from '@angular/forms'
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http'
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +13,8 @@ import {ServiceComponent } from './ServiceComp/Service.component';
 import {LogService} from './Services/log.service';
 import {childComponent} from './childComponent/childComponent';
 import { ParentComponent } from './ParentComponent/Parent.component';
-import {TDCtrl} from './TemplateDriven/TD.Controller'
+import {TDCtrl} from './TemplateDriven/TD.Controller';
+import { ApiService } from './Services/api.service';
 
 
 @NgModule({
@@ -29,9 +32,10 @@ import {TDCtrl} from './TemplateDriven/TD.Controller'
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [LogService],
+  providers: [LogService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
