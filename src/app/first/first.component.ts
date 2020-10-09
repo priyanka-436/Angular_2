@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder,FormGroup,Validators } from '@angular/forms'
+import {FormBuilder,FormGroup,Validators } from '@angular/forms';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-first',
@@ -15,7 +16,7 @@ import {FormBuilder,FormGroup,Validators } from '@angular/forms'
 export class FirstComponent implements OnInit {
   testform : FormGroup
   title: string ="have a great day";
-  constructor( private formbuilder : FormBuilder) { }
+  constructor( private formbuilder : FormBuilder , private Router: Router) { }
 
   ngOnInit(): void {
 this.testform= this.formbuilder.group({
@@ -26,5 +27,6 @@ this.testform= this.formbuilder.group({
 
   FormFunction(){
     console.log(this.testform.value)
+    this.Router.navigate(['/servicom',35])
   }
 }
