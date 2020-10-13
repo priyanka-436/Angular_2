@@ -4,14 +4,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent} from './Second/Second.component';
 import {ServiceComponent } from './ServiceComp/Service.component';
+import { userList } from './usersList/list.component';
+import { userComponent } from './user/user.component'
+
+
 
 
 
 
 const routes: Routes = [
-  { path:'first', component:FirstComponent },
-  { path:'', component:SecondComponent },
-  { path:'servicom/:Id', component:ServiceComponent },
+  { path:'user', component:userComponent },
+  { path:'', component:userList },
+  { path:'userslist', component:userList },
 
 ];
 

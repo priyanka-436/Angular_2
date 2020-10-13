@@ -16,6 +16,8 @@ import { ParentComponent } from './ParentComponent/Parent.component';
 import {TDCtrl} from './TemplateDriven/TD.Controller';
 import { ApiService } from './Services/api.service';
 
+import { userList } from './usersList/list.component';
+import { userComponent } from './user/user.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ApiService } from './Services/api.service';
     ServiceComponent,
     childComponent,
     ParentComponent,
-    TDCtrl
+    TDCtrl,
+    userList,
+    userComponent
   ],
   imports: [
     BrowserModule,

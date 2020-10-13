@@ -14,4 +14,8 @@ getUsers() : Observable<any>{
     return this.http.get<any>(this.baseUrl)
 }
 
+postUsers(user) : Observable <any>{
+return this.http.post(this.baseUrl,user)
+}
+
 }
