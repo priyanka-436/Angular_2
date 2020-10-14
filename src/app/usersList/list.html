@@ -12,6 +12,7 @@
               <th>UserName</th>
               <th>Age</th>
               <th>Salary</th>
+              <th>Actions</th>
           
             </tr>
             </thead>
@@ -23,6 +24,9 @@
               <td>{{x.username}}</td>
               <td>{{x.age | percent}}</td>
               <td>{{x.salary | currency : 'CAD'}}</td>
+              <td><button (click)="editUser(x.id)">Edit</button></td>
+              <td><button (click)="deleteUser(x.id)">Delete</button></td>
+
           
               
             </tr>

@@ -9,6 +9,7 @@ export class ApiService {
     }
 
     baseUrl: string = 'http://localhost:8080/users/';
+    deleteUrl: string = 'http://localhost:8080/deleteUser/';
 
 getUsers() : Observable<any>{
     return this.http.get<any>(this.baseUrl)
@@ -17,5 +18,16 @@ getUsers() : Observable<any>{
 postUsers(user) : Observable <any>{
 return this.http.post(this.baseUrl,user)
 }
+
+
+getUsersByID(id) : Observable<any>{
+    return this.http.get<any>(this.baseUrl + id)
+}
+ updateUsers(user) : Observable <any>{
+    return this.http.put<any>(this.baseUrl + user.id,user)
+ }
+ deleteuser(id) : Observable <any>{
+    return this.http.get<any>(this.deleteUrl+ id)
+ }
 
 }

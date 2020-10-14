@@ -11,7 +11,8 @@ import { Router, ActivatedRoute } from "@angular/router";
 
 export class userComponent implements OnInit {
     addUser:FormGroup
-    constructor( private formbuilder : FormBuilder , private service : ApiService, private route : Router){
+    public btnname="Add"
+    constructor( private formbuilder : FormBuilder , private service : ApiService, private route : Router, private Router :ActivatedRoute ){
 
     }
  ngOnInit(){
@@ -24,11 +25,27 @@ export class userComponent implements OnInit {
         salary: ['', Validators.required]
      })
 
+     if(this.Router.snapshot.paramMap.get('id')){
+         this.btnname="Update"
+         let userId=this.Router.snapshot.paramMap.get('id');
+         this.service.getUsersByID(userId).subscribe((resp)=>{
+            this.addUser.setValue(resp.data)
+         })
+
+     }
+
  }
  add(){
-this.service.postUsers(this.addUser.value).subscribe((response)=>{
-    this.route.navigate(['/userslist'])
-})
+   if(this.Router.snapshot.paramMap.get('id')){
+    this.service.updateUsers(this.addUser.value).subscribe((response)=>{
+        this.route.navigate(['/userslist'])
+    })
+   } else{
+    this.service.postUsers(this.addUser.value).subscribe((response)=>{
+        this.route.navigate(['/userslist'])
+    })
+   } 
+
  }
 
 }
