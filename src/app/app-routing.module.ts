@@ -6,17 +6,16 @@ import { SecondComponent} from './Second/Second.component';
 import {ServiceComponent } from './ServiceComp/Service.component';
 import { userList } from './usersList/list.component';
 import { userComponent } from './user/user.component';
-
-
-
+ import { Login } from './login/login';
+ import {AuthenticonService} from './Services/Authentication.service'
 
 
 
 const routes: Routes = [
-  { path:'user', component:userComponent },
-  { path:'', component:userList },
+  { path:'user', canActivate :[AuthenticonService], component:userComponent },
+  { path:'', component:Login },
   { path:'userslist', component:userList },
-  { path:'user/:id', component:userComponent },
+  { path:'user/:id', canActivate :[AuthenticonService],component:userComponent },
 
 
 ];

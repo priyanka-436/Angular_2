@@ -17,7 +17,9 @@ import {TDCtrl} from './TemplateDriven/TD.Controller';
 import { ApiService } from './Services/api.service';
 
 import { userList } from './usersList/list.component';
-import { userComponent } from './user/user.component'
+import { userComponent } from './user/user.component';
+import { Login} from './login/login';
+import {AuthenticonService} from './Services/Authentication.service'
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { userComponent } from './user/user.component'
     ParentComponent,
     TDCtrl,
     userList,
-    userComponent
+    userComponent,
+    Login
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,7 @@ import { userComponent } from './user/user.component'
     FormsModule,
     HttpClientModule
   ],
-  providers: [LogService, ApiService],
+  providers: [LogService, ApiService,AuthenticonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
